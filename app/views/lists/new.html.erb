@@ -1,0 +1,10 @@
+<%= form_for @lists do |f| %>
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title, autofocus: true, autocomplete: "list name" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "create your list!!" %>
+  </div>
+<% end %>

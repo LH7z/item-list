@@ -1,0 +1,5 @@
+<h2>ola</h2>
+
+<% @lists.each do |list| %>
+  <%= link_to list.title, list_path(list) %>
+<% end %>

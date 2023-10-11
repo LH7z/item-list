@@ -1,0 +1,40 @@
+class ListsController < ApplicationController
+  before_action :set_list, only: %i[show destroy]
+
+  def index
+    @lists = List.all
+  end
+
+  def show
+  end
+
+  def destroy
+  end
+
+  def new
+    @lists = List.new
+    @user = current_user
+  end
+
+  def create
+    @lists = List.new(list_params)
+    @lists.user = current_user
+
+    if @lists.save
+      redirect_to lists_path, notice: "project was successfully created."
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  private
+
+  def set_list
+    @list = List.find(params[:id])
+  end
+
+  def list_params
+    params.require(:list).permit(:title, :user_id)
+  end
+
+end
