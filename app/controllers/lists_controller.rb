@@ -2,7 +2,7 @@ class ListsController < ApplicationController
   before_action :set_list, only: %i[show destroy]
 
   def index
-    @lists = List.all
+    @lists = List.where(user_id: current_user)
   end
 
   def show
@@ -19,6 +19,7 @@ class ListsController < ApplicationController
   def create
     @lists = List.new(list_params)
     @lists.user = current_user
+    @lists.items = params[:items]
 
     if @lists.save
       redirect_to lists_path, notice: "project was successfully created."

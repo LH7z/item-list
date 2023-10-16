@@ -1,3 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(217deg, rgba(44, 255, 37, 0.8), rgba(255,0,0,0) 70.71%),
+              linear-gradient(127deg, rgb(44, 69, 255, .6), rgba(0,255,0,0) 70.71%),
+              linear-gradient(336deg, rgba(255, 50, 50, 0.8), rgba(0,0,255,0) 70.71%);
+  background-repeat: no-repeat;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+}
+
+img {
+  width: 190px;
+  height: 190px;
+  border-radius: 100%;
+  position: absolute;
+  top: -95px;
+  border: 2px solid white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  object-position: center;
+  object-fit: cover;
+}
+
+section {
+  display: flex;
+  min-height: 100vh;
+}
+
+.card {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 430px;
+  max-width: 320px;
+  justify-content: space-between;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  border: 2px solid white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 15px;
+  padding:110px 40px 15px;
+}
+
+.list {
+  color: white;
+  justify-content: flex-start;
+  gap: 25px;
+  padding: 25px 40px;
+}
+
+.login {
+  padding: 25px 40px;
+  justify-content: space-around;
+  color: white;
+}
+
+.card-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 75px;
+}
+
+.card h1 {
+  font-size: 30px;
+  color: white;
+  font-weight: 600;
+}
+
+.card h1 span {
+  font-size: 55px;
+}
+
+.button-start {
+  background-color:rgba(44, 255, 37, 0.6);
+  color: white;
+  border-radius: 15px;
+  padding: 10px 45px;
+  font-size: 25px;
+  font-weight: 600;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+
+.button-logout {
+  color: white;
+}
+
+.field {
+  position: relative;
+}
+
+.field input {
+  padding: 10px 10px 5px;
+}
+
+.label {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  transition: .5s;
+}
+
+input:focus + label,
+input:valid + label{
+  top: -10px;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.actions input {
+  background-color: rgba(44, 255, 37, 0.6);
+  border-radius: 15px;
+  padding: 10px 45px;
+  font-size: 20px;
+  font-weight: 600;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+
+.controls .add {
+  background-color:rgba(44, 255, 37, 0.6);
+  padding: 10px 30px;
+  border-radius: 15px;
+  font-size: 15px;
+  font-weight: 600;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.controls .remove {
+  background-color: hsla(0, 100%, 50%, 0.6);
+  padding: 10px 30px;
+  border-radius: 15px;
+  font-size: 15px;
+  font-weight: 600;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
