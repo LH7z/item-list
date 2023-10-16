@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   # root "articles#index"
   root to: "pages#home"
   resources :lists do
-    resources :items
   end
 
 end

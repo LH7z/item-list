@@ -1,2 +1,17 @@
-<h2>oi</h2>
-<%= link_to "Log out", destroy_user_session_path, class: "nav-link", data: {turbo_method: :delete} %>
+<section>
+  <div class="card">
+    <% if current_user %>
+      <img src="https://media.tenor.com/2ulcozvqmiIAAAAd/jujutsu-kaisen.gif">
+    <% end %>
+    <h1>Let's build ours <span>lists!!</span></h1>
+    <div class="card-buttons">
+      <% if current_user %>
+        <a href="<%=lists_path%>" class="button-start text-center">Get started</a>
+        <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: 'button-logout'%>
+      <% else %>
+        <a href="<%=new_user_session_path%>" class="button-start text-center">Login</a>
+        <%= link_to "Sign-up free!", new_user_registration_path, class: 'button-logout'%>
+      <% end %>
+    </div>
+  </div>
+</section>
