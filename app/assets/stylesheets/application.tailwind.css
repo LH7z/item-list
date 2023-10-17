@@ -59,6 +59,12 @@ section {
   padding: 25px 40px;
 }
 
+.list-index {
+  color: white;
+  gap: 5px;
+  padding: 25px 10px;
+}
+
 .login {
   padding: 25px 40px;
   justify-content: space-around;
