@@ -12,8 +12,6 @@ export default class extends Controller {
     }
     remove(event) {
       var input_tags = formfield.getElementsByTagName('input');
-      if(input_tags.length > 1) {
         formfield.removeChild(input_tags[(input_tags.length) - 1]);
-      }
     }
   }
