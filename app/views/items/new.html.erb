@@ -1,0 +1,10 @@
+<%= form_for([@list, @item]) do |f| %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true, autocomplete: "item name" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Add your items !!" %>
+  </div>
+<% end %>

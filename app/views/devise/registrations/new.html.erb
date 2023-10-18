@@ -1,0 +1,37 @@
+<section>
+  <div class="card login fade-in">
+    <h2 class="text-5xl font-bold">Sign up</h2>
+
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="field text-left text-s mt-5">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "bg-transparent border-b-2 outline-0 text-lg", :required => true %>
+        <%= f.label :email , class: "label"%><br />
+      </div>
+
+      <div class="field text-left mt-5">
+        <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname", class: "bg-transparent border-b-2 outline-0 text-lg", :required => true %>
+        <%= f.label :nickname, class: "label" %><br />
+      </div>
+
+      <div class="field text-left mt-5">
+        <%= f.password_field :password, autocomplete: "new-password", class: "bg-transparent border-b-2 outline-0 text-lg", :required => true %>
+          <%= f.label :password, class: "label" %>
+      </div>
+
+      <div class="field text-left mt-5">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password" , class: "bg-transparent border-b-2 outline-0 text-lg", :required => true %>
+        <%= f.label :password_confirmation, class: "label" %><br />
+      </div>
+
+      <div class="actions field mt-5">
+          <%= f.submit "Sign up" %>
+          <div class="d-flex flex-col mt-2">
+            <%= render "devise/shared/links" %>
+          </div>
+      </div>
+    <% end %>
+  </div>
+
+</section>

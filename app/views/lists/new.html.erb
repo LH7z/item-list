@@ -1,0 +1,22 @@
+<section>
+  <div class="card list fade-in">
+    <h2 class="text-5xl font-bold">create  your list!</h2>
+    <%= form_for @lists do |f| %>
+      <div class="field text-left mt-5">
+        <%= f.text_field :title, autofocus: true, autocomplete: "list name", class: "bg-transparent border-b-2 outline-0 text-lg", :required => true  %>
+        <%= f.label :title , class: "label" %><br />
+      </div>
+
+      <div class="field" id="formfield" data-controller="hello">
+        <div class="controls mt-2">
+          <button type="button" class="add mt-2" data-action="click->hello#add">Add</button>
+          <button type="button" class="remove mt-2" data-action="click->hello#remove">Remove</button>
+        </div>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "create your list!!", class: "mt-5" %>
+      </div>
+    <% end %>
+  </div>
+</section>
