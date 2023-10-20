@@ -127,7 +127,7 @@ input:valid + label{
   display: flex;
   justify-content: center;
   flex-direction: column;
-  gap: 20px;
+  /* gap: 20px; */
 }
 
 .actions input {
@@ -150,7 +150,7 @@ input:valid + label{
 }
 
 .controls .remove {
-  background-color: hsla(0, 100%, 50%, 0.6);
+  background-color: #ff000099;
   padding: 10px 30px;
   border-radius: 15px;
   font-size: 15px;
@@ -180,5 +180,45 @@ input::placeholder {
 }
 
 .completed {
-  background-color: rgba(44, 255, 37, 0.6);
+  background-color: #2bff2499;
 }
+
+/* input fyle css */
+
+.button-input {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 5px 10px;
+  text-align: center;
+  width: 100%;
+  cursor: pointer;
+}
+
+.custom-file-input {
+  max-width: 240px;
+  visibility: hidden;
+}
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+.button-check {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  cursor: pointer;
+  left: 0;
+  top: 45px;
+  text-decoration: underline;
+}
+
+/* .custom-file-input::-webkit-file-upload-button:focus {
+  background-color: rgba(44, 255, 37, 0.6);
+  border: 0;
+  transition: .9s;
+  animation-fill-mode: forwards;
+} */
+
+
+/* ... */
