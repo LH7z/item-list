@@ -16,7 +16,7 @@ export default class extends Controller {
     } else {
       button.style.backgroundColor = "#ff000099"
       button.style.border = "0px"
-      button.innerHTML = "C'mon bro put a photo!"
+      button.innerHTML = "C'mon bro put a photo! ✖️​"
     };
   }
 }
