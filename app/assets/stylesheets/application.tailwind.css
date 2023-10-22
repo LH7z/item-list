@@ -213,12 +213,5 @@ input::placeholder {
   text-decoration: underline;
 }
 
-/* .custom-file-input::-webkit-file-upload-button:focus {
-  background-color: rgba(44, 255, 37, 0.6);
-  border: 0;
-  transition: .9s;
-  animation-fill-mode: forwards;
-} */
-
 
 /* ... */
