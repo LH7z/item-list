@@ -1,6 +1,7 @@
 <section>
   <div class="card fade-in">
     <% if current_user %>
+    <% raise %>
       <%= cl_image_tag (current_user.photo.key), crop: :thumb, class: "avatar"%>
     <% end %>
     <h1>Let's build ours <span>lists!!</span></h1>
