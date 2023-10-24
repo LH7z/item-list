@@ -78,3 +78,5 @@ end
 gem "devise"
 
 gem "cloudinary"
+
+gem "font-awesome-sass", "~> 6.4.2"
