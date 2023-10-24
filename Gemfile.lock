@@ -107,6 +107,9 @@ GEM
       dotenv (= 2.8.1)
       railties (>= 3.2)
     erubi (1.12.0)
+    ffi (1.16.3)
+    font-awesome-sass (6.4.2)
+      sassc (~> 2.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
     http-accept (1.7.0)
@@ -208,6 +211,8 @@ GEM
       netrc (~> 0.8)
     rexml (3.2.6)
     rubyzip (2.3.2)
+    sassc (2.4.0)
+      ffi (~> 1.9)
     selenium-webdriver (4.14.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
@@ -259,6 +264,7 @@ DEPENDENCIES
   debug
   devise
   dotenv-rails
+  font-awesome-sass (~> 6.4.2)
   jbuilder
   jsbundling-rails
   pg (~> 1.1)
