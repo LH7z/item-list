@@ -9,6 +9,9 @@ class ListsController < ApplicationController
   end
 
   def destroy
+
+    @list.destroy
+    redirect_to lists_path, notice: "list was sucessfully destroyed."
   end
 
   def new

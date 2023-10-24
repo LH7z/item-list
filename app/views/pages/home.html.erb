@@ -1,7 +1,7 @@
 <section>
   <div class="card fade-in">
     <% if current_user %>
-      <img src="https://media.tenor.com/2ulcozvqmiIAAAAd/jujutsu-kaisen.gif">
+      <%= cl_image_tag (current_user.image.key), crop: :thumb, class: "avatar"%>
     <% end %>
     <h1>Let's build ours <span>lists!!</span></h1>
     <div class="card-buttons">

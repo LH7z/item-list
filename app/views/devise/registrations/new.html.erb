@@ -25,7 +25,13 @@
         <%= f.label :password_confirmation, class: "label" %><br />
       </div>
 
-      <div class="actions field mt-5">
+      <div class="mt-5 relative" data-controller="file-add">
+        <button type="button" class="button-input" id="my-button" data-action = "click->file-add#file">Add your photo!</button>
+        <button type="button" class="button-check text-xs" id="button-check" data-action = "click->file-add#button">click to validate your photo</button>
+        <%= f.file_field :image, id: "file", class: "custom-file-input" %>
+      </div>
+
+      <div class="actions field mt-7">
           <%= f.submit "Sign up" %>
           <div class="d-flex flex-col mt-2">
             <%= render "devise/shared/links" %>
