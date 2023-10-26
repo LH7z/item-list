@@ -237,11 +237,14 @@ input::placeholder {
 .trash {
   position: absolute;
   right: -15px;
-  top: -15px;
-  background-color: white;
-  color: #ff000099;
-  width: 40px;
-  height: 40px;
+  top: -25px;
+  background-color: #fff;
+  color: #f009;
+  width: 63px;
+  height: 63px;
   border-radius: 100%;
-  font-size: 28px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
