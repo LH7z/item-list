@@ -12,7 +12,8 @@ module.exports = {
     extend: {
       fontFamily: {
         Poppins: ["Poppins", "sans-serif"],
-        Gabarito: ["Gabarito", "cursive"],
+        Bebas: ['Bebas Neue', "sans-serif"],
+        Russo: ["Russo one", "sans-serif"],
       },
       colors: {
         "green": "#2cff2599",
