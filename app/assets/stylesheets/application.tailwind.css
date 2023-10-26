@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -16,8 +17,9 @@ body {
               linear-gradient(127deg, rgb(44, 69, 255, .6), rgba(0,255,0,0) 70.71%),
               linear-gradient(336deg, rgba(255, 50, 50, 0.8), rgba(0,0,255,0) 70.71%);
   background-repeat: no-repeat;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   min-height: 100vh;
+  letter-spacing: 1px;
 }
 
 .avatar {
@@ -38,8 +40,8 @@ body {
   border-radius: 100%;
   border: 5px solid white;
   position: absolute;
-  top: -22px;
-  left: -25px;
+  top: -25px;
+  left: -40px;
 }
 
 section {
@@ -63,6 +65,15 @@ section {
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 15px;
   padding:110px 25px 15px;
+  overflow-wrap: anywhere;
+}
+
+.back {
+  position: absolute;
+  top: -30px;
+  left: 0;
+  text-decoration: underline;
+  
 }
 
 .list {
@@ -247,4 +258,8 @@ input::placeholder {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+form {
+  max-width: 280px;
 }
