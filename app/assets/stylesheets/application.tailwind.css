@@ -41,7 +41,7 @@ body {
   border: 5px solid white;
   position: absolute;
   top: -25px;
-  left: -40px;
+  right: -40px;
 }
 
 section {
@@ -70,10 +70,19 @@ section {
 
 .back {
   position: absolute;
-  top: -30px;
-  left: 0;
-  text-decoration: underline;
-  
+  left: -21px;
+  font-size: 28px;
+  top: -15px;
+  background-color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  color: #2cff25cc;
+  justify-content: center;
+  animation: bounce 3s infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .list {
@@ -151,7 +160,6 @@ input:valid + label{
   display: flex;
   justify-content: center;
   flex-direction: column;
-  /* gap: 20px; */
 }
 
 .actions input {
@@ -192,16 +200,6 @@ input::placeholder {
   animation-fill-mode: forwards;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 .completed {
   background-color: #2bff2499;
@@ -262,4 +260,24 @@ input::placeholder {
 
 form {
   max-width: 280px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+    30% {
+      transform: translateX(-25%);
+    }
+    20%, 40% {
+      transform: translateX(0);
+    }
 }
