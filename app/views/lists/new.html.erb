@@ -14,6 +14,7 @@
           <button type="button" class="add mt-2" data-action="click->hello#add">Add</button>
           <button type="button" class="remove mt-2" data-action="click->hello#remove">Remove</button>
         </div>
+        <%= f.text_field :items, class: "bg-transparent border-b-2 outline-0 text text-center", :required => true, :placeholder => "Add your items here" %>
       </div>
 
       <div class="actions">
