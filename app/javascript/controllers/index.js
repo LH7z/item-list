@@ -7,6 +7,9 @@ import { application } from "./application"
 import CompletedController from "./completed_controller"
 application.register("completed", CompletedController)
 
+import DeleteController from "./delete_controller"
+application.register("delete", DeleteController)
+
 import FileAddController from "./file_add_controller"
 application.register("file-add", FileAddController)
 
