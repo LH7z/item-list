@@ -47,6 +47,7 @@ body {
 section {
   display: flex;
   min-height: 100vh;
+  padding: 55px;
 }
 
 .card {
