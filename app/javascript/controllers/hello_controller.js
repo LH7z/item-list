@@ -11,7 +11,9 @@ export default class extends Controller {
       newField.setAttribute('required','true');
       formfield.appendChild(newField);
     }
+
     remove(event) {
+      console.log("clickaram");
       var input_tags = formfield.getElementsByTagName('input');
         formfield.removeChild(input_tags[(input_tags.length) - 1]);
     }
