@@ -7,12 +7,12 @@
       <%= render "devise/shared/error_messages", resource: resource %>
 
       <div class="field text-left text-s mt-5">
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "bg-transparent border-b-2 outline-0 text-lg", :required => true %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "off", class: "bg-transparent border-b-2 outline-0 text-lg", :required => true %>
         <%= f.label :email , class: "label"%><br />
       </div>
 
       <div class="field text-left mt-5">
-        <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname", class: "bg-transparent border-b-2 outline-0 text-lg", :required => true %>
+        <%= f.text_field :nickname, autofocus: true, autocomplete: "off", class: "bg-transparent border-b-2 outline-0 text-lg", :required => true %>
         <%= f.label :nickname, class: "label" %><br />
       </div>
 
