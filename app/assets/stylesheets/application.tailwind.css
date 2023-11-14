@@ -42,6 +42,8 @@ body {
   position: absolute;
   top: -54px;
   right: -50px;
+  object-position: center;
+  object-fit: cover;
 }
 
 section {
