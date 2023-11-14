@@ -8,6 +8,7 @@ export default class extends Controller {
       newField.setAttribute('name','items[]');
       newField.setAttribute('class','bg-transparent border-b-2 outline-0 text text-center');
       newField.setAttribute('placeholder','Add your items here');
+      newField.setAttribute('autocomplete', 'off')
       newField.setAttribute('required','true');
       formfield.appendChild(newField);
     }
