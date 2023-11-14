@@ -250,10 +250,25 @@ input::placeholder {
 
 .trash {
   position: absolute;
-  right: -32px;
-  bottom: -25px;
+  right: -34px;
+  bottom: -30px;
   background-color: #fff;
   color: #f009;
+  width: 75px;
+  height: 75px;
+  border-radius: 100%;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit {
+  position: absolute;
+  left: -34px;
+  bottom: -30px;
+  background-color: #fff;
+  color: grey;
   width: 75px;
   height: 75px;
   border-radius: 100%;

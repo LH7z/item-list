@@ -2,9 +2,6 @@
   <div class="card list fade-in">
     <a href="/lists" class="back"><i id="arrow-left" class="fa-solid fa-arrow-left-long"></i></a>
     <div class="list-show-actions">
-      <%= link_to list_path,class: "trash", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do%>
-        <i class="fa-solid fa-trash-can"></i>
-      <% end %>
       <h2 class="text-3xl font-bold"><%= @list.title %></h2>
       <% @list.items.each do |item| %>
         <div class="w-full relative"  data-controller="delete" >
@@ -14,6 +11,12 @@
       <% end %>
     </div>
     <div class="controls">
+      <%= link_to edit_list_path, class: "edit" do %>
+        <i class="fa-solid fa-gear"></i>
+      <% end %>
+      <%= link_to list_path,class: "trash", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do%>
+        <i class="fa-solid fa-trash-can"></i>
+      <% end %>
     </div>
   </div>
 </section>
