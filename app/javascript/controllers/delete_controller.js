@@ -5,7 +5,6 @@ export default class extends Controller {
   static targets = ["item", "trash"]
 
   connect() {
-    console.log("delete ta aqui vamos la");
   }
 
   delete(event){
