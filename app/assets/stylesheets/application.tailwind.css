@@ -13,13 +13,21 @@
 }
 
 body {
-  background: linear-gradient(217deg, rgba(44, 255, 37, 0.8), rgba(255,0,0,0) 70.71%),
+  /* background: linear-gradient(217deg, rgba(44, 255, 37, 0.8), rgba(255,0,0,0) 70.71%),
               linear-gradient(127deg, rgb(44, 69, 255, .6), rgba(0,255,0,0) 70.71%),
-              linear-gradient(336deg, rgba(255, 50, 50, 0.8), rgba(0,0,255,0) 70.71%);
-  background-repeat: no-repeat;
+              linear-gradient(336deg, rgba(255, 50, 50, 0.8), rgba(0,0,255,0) 70.71%); */
+  /* background: url(gif/video.mp4); */
   font-family: 'Poppins', sans-serif;
   min-height: 100vh;
   letter-spacing: 1px;
+}
+
+.background{
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
 }
 
 .avatar {
@@ -87,6 +95,11 @@ section {
   border-radius: 15px;
   padding:110px 25px 15px;
   overflow-wrap: anywhere;
+}
+
+.card-out{
+  justify-content: center;
+  gap: 25px
 }
 
 .back {

@@ -20,6 +20,11 @@ class ToDoListsController < ApplicationController
     end
   end
 
+  def destroy
+    @to_do.destroy
+    redirect_to to_do_lists_path, notice: "task was sucessfully destroyed."
+  end
+
   private
 
   def to_do_params

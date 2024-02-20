@@ -64,7 +64,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_20_182346) do
     t.string "desc"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "completed", default: false
+    t.integer "status", default: 1
     t.bigint "user_id"
     t.index ["user_id"], name: "index_to_do_lists_on_user_id"
   end
