@@ -7,6 +7,7 @@
     <div class="card-buttons">
       <% if current_user %>
         <a href="<%=lists_path%>" class="button-start text-center">Get started</a>
+        <a href="<%=to_do_lists_path%>" class="button-start text-center">To-do List</a>
         <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: 'button-logout'%>
       <% else %>
         <a href="<%=new_user_session_path%>" class="button-start text-center">Login</a>
