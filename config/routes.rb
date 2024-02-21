@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   root to: "pages#home"
   resources :lists do
   end
-
+  resources :to_do_lists do
+  end
 end

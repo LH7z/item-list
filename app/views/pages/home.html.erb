@@ -4,14 +4,17 @@
       <%= cl_image_tag (current_user.image.key), crop: :thumb, class: "avatar"%>
     <% end %>
     <h1>Let's build ours <span>lists!!</span></h1>
-    <div class="card-buttons">
-      <% if current_user %>
-        <a href="<%=lists_path%>" class="button-start text-center">Get started</a>
-        <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: 'button-logout'%>
-      <% else %>
+    <% if current_user %>
+      <div class="card-buttons">
+        <a href="<%=lists_path%>" class="button-start text-center mb-4">Get started</a>
+        <a href="<%=to_do_lists_path%>" class="button-start text-center">To-do List</a>
+        <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: 'button-logout mt-16'%>
+      </div>
+    <% else %>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 108px;">
         <a href="<%=new_user_session_path%>" class="button-start text-center">Login</a>
         <%= link_to "Sign-up free!", new_user_registration_path, class: 'button-logout'%>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
 </section>
