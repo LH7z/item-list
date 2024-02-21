@@ -16,6 +16,7 @@ body {
   background: linear-gradient(217deg, rgba(44, 255, 37, 0.8), rgba(255,0,0,0) 70.71%),
               linear-gradient(127deg, rgb(44, 69, 255, .6), rgba(0,255,0,0) 70.71%),
               linear-gradient(336deg, rgba(255, 50, 50, 0.8), rgba(0,0,255,0) 70.71%);
+
   /* background: url(gif/background.gif);
   background-repeat: no-repeat; */
   font-family: 'Poppins', sans-serif;
@@ -320,7 +321,6 @@ form {
   width: 100%;
   position: relative;
 }
-
 
 .trash-index {
   position: absolute;
