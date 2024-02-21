@@ -28,6 +28,7 @@ body {
   bottom: 0;
   min-width: 100%;
   min-height: 100%;
+  object-fit: cover;
 }
 
 .avatar {
@@ -57,7 +58,6 @@ body {
 section {
   display: flex;
   min-height: 100vh;
-  padding: 55px;
 }
 
 .card {
@@ -144,7 +144,6 @@ section {
 .card-buttons {
   display: flex;
   flex-direction: column;
-  gap: 75px;
 }
 
 .card h1 {
@@ -325,7 +324,7 @@ form {
 .trash-index {
   position: absolute;
   top: -8px;
-  right: -5px;
+  right: -10px;
   color: #f009;
   background-color: white;
   width: 25px;
@@ -364,5 +363,38 @@ form {
   }
   0%, 50% {
     transform: translateY(0);
+  }
+}
+
+@media (max-width: 376px) {
+  .avatar {
+    width: 160px;
+    height: 160px;
+    top: -70px;
+  }
+  .card h1{
+    font-size: 20px;
+  }
+  span {
+    font-size: 45px;
+  }
+  .button-start {
+    font-size: 20px;
+  }
+  #avatar-lists{
+    width: 85px;
+    height: 85px;
+    top: -40px;
+    right: -20px;
+  }
+  .back{
+    left: -20px;
+    top: -31px;
+  }
+  .edit{
+    left: -20px
+  }
+  .trash{
+    right: -20px;
   }
 }
