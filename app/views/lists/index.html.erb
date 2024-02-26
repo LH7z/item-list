@@ -2,7 +2,11 @@
 <section>
   <% if @lists == [] %>
     <div class="card-out card list fade-in">
-      <%= cl_image_tag (current_user.image.key), crop: :thumb , id: "avatar-lists"%>
+      <% if current_user.image.attached? %>
+        <%= cl_image_tag (current_user.image.key), crop: :thumb , id: "avatar-lists"%>
+      <% else %>
+        <%= image_tag "avatar.png", id: "avatar-lists" %>
+      <% end %>
       <%= image_tag "out-of-content.png", alt: "Out of content"%>
       <div class="controls mt-3">
         <%= link_to "Add your list" , new_list_path, class: "add" %>

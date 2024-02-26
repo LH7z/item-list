@@ -1,11 +1,14 @@
-
 <section>
   <% if @to_do == [] %>
     <div class="card-out card list fade-in">
-      <%= cl_image_tag (current_user.image.key), crop: :thumb , id: "avatar-lists"%>
+      <% if current_user.image.attached? %>
+        <%= cl_image_tag (current_user.image.key), crop: :thumb , id: "avatar-lists"%>
+      <% else %>
+        <%= image_tag "avatar.png", id: "avatar-lists" %>
+      <% end %>
       <%= image_tag "out-of-content.png", alt: "Out of content"%>
       <div class="controls mt-3">
-        <%= link_to "Add your list" , new_to_do_list_path, class: "add" %>
+        <%= link_to "Add your Todo" , new_to_do_list_path, class: "add" %>
       </div>
       <a href="/" class="back"><i id="arrow-left" class="fa-solid fa-arrow-left-long"></i></a>
     </div>
@@ -15,24 +18,39 @@
         <%= cl_image_tag (current_user.image.key), crop: :thumb , id: "avatar-lists"%>
         <h2 class="text-3xl font-bold"><%= current_user.nickname %>'s To-do!</h2>
           <% @to_do.each do |to_do| %>
-            <div class="w-full border-2 rounded-2xl p-4" style="position: relative">
-                <div>
-                  <%= to_do.name %>
-                </div>
-                <div>
-                  <%= to_do.desc %>
-                </div>
-                <div>
-                  <%= to_do.date.strftime("%A %b,%d") %>
-                </div>
-              <%= link_to to_do, class: "trash-index", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do%>
-                <i class="fa-solid fa-trash-can"></i>
-              <% end %>
-            </div>
+            <% if to_do.date.before?(Date.today)%>
+              <% to_do.closed! %>
+            <% end %>
+            <% if to_do.completed? %>
+              <div class="w-full border-2 rounded-2xl p-4" style="position: relative; background: #2bff2499">
+            <% elsif to_do.closed? %>
+              <div class="w-full border-2 rounded-2xl p-4" style="position: relative; background: #ff000099">
+            <% else %>
+              <div class="w-full border-2 rounded-2xl p-4" style="position: relative">
+            <% end %>
+                    <h1 class="text-3xl"><%= to_do.date.strftime("%b, %d")%></h1>
+                    <%# <h1 class="text-3xl"><%= to_do.date.strftime("%H : %M")%>
+                    <h2 class="text-xl"><%= to_do.date.strftime("%A") %></h2>
+                    <p class="text-xl"><%= to_do.name %></p>
+                    <p><%= to_do.desc %></p>
+                <%= link_to to_do, class: "trash-index", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do%>
+                  <i class="fa-solid fa-trash-can"></i>
+                <% end %>
+                <%= link_to complete_path(to_do), data:{ turbo_method: :get } do%>
+                  <% if to_do.completed? || to_do.closed? %>
+                    <div style="display:none">
+                  <% else %>
+                    <div class="complete-index">
+                  <% end %>
+                      <h2>complete!</h2>
+                      <i class="fa-regular fa-circle-check text-2xl"></i>
+                    </div>
+                <% end %>
+              </div>
           <% end %>
       </div>
       <div class="controls mt-3">
-        <%= link_to "Add your list" , new_to_do_list_path, class: "add" %>
+        <%= link_to "New Todo" , new_to_do_list_path, class: "add" %>
       </div>
       <a href="/" class="back"><i id="arrow-left" class="fa-solid fa-arrow-left-long"></i></a>
     </div>

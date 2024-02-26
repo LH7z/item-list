@@ -60,11 +60,13 @@ body {
 section {
   display: flex;
   min-height: 100vh;
+  padding: 50px 0;
 }
 
 .card {
   position: relative;
   margin: auto;
+  padding: 115px 0 10px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -135,6 +137,8 @@ section {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  align-items: center;
+  margin-bottom: 15px;
 }
 
 .login {
@@ -338,6 +342,29 @@ form {
   animation: bounceY 1.5s infinite;
 }
 
+.complete-index {
+  color:#2bff2499;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 21px;
+  border: 2px solid #2bff2499;
+  margin-top: .5rem
+}
+
+
+.date{
+  box-shadow: 0 0 15px #0003;
+  color: black;
+  border-radius: 10px;
+}
+::-webkit-calendar-picker-indicator{
+  cursor: pointer;
+  background-color: white;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -367,11 +394,11 @@ form {
   }
 }
 
-@media (max-width: 376px) {
+@media (max-width: 420px) {
   .avatar {
     width: 160px;
     height: 160px;
-    top: -70px;
+    top: -55px;
   }
   .card h1{
     font-size: 20px;
@@ -399,3 +426,8 @@ form {
     right: -20px;
   }
 }
+/* @media (max-width: 451px){
+  .card{
+    margin: 0;
+  }
+} */
