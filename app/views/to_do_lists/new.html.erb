@@ -1,6 +1,6 @@
 <section>
   <div class="card list fade-in">
-    <a href="/lists" class="back"><i id="arrow-left" class="fa-solid fa-arrow-left-long"></i></a>
+    <a href="/to_do_lists" class="back"><i id="arrow-left" class="fa-solid fa-arrow-left-long"></i></a>
     <h2 class="text-5xl font-bold">create  your list!</h2>
     <%= form_for @to_do do |f| %>
       <div class="field text-left mt-5">
@@ -9,11 +9,10 @@
       </div>
       <div class="field text-left mt-5">
         <%= f.text_field :desc, autofocus: true, autocomplete: "off", class: "bg-transparent border-b-2 outline-0 text-lg", :required => true  %>
-        <%= f.label :desc , class: "label" %><br />
+        <%= f.label :description , class: "label" %><br />
       </div>
       <div class="field text-left mt-5">
-        <%= f.date_field :date, autofocus: true, autocomplete: "off", class: "bg-transparent border-b-2 outline-0 text-lg", :required => true  %>
-        <%= f.label :date , class: "label" %><br />
+        <%= f.datetime_field :date, min: Date.today, autofocus: true, autocomplete: "off", class: "date", :required => true  %>
         <%= f.hidden_field :status %>
       </div>
 

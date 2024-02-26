@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   end
   resources :to_do_lists do
   end
+  get "to_do_lists/:id/complete", to: "to_do_lists#complete" , as: "complete"
 end
