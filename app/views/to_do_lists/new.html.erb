@@ -12,7 +12,7 @@
         <%= f.label :description , class: "label" %><br />
       </div>
       <div class="field text-left mt-5">
-        <%= f.datetime_field :date, min: Date.today, autofocus: true, autocomplete: "off", class: "date", :required => true  %>
+        <%= f.date_field :date, min: Date.today, autofocus: true, autocomplete: "off", class: "date", :required => true  %>
         <%= f.hidden_field :status %>
       </div>
 

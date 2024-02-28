@@ -1,5 +1,5 @@
 class ToDoListsController < ApplicationController
-  before_action :set_to_do, only: %i[edit destroy]
+  before_action :set_to_do, only: %i[edit destroy complete]
   def index
     @to_do = ToDoList.where(user_id: current_user)
   end
@@ -26,7 +26,6 @@ class ToDoListsController < ApplicationController
   end
 
   def complete
-    set_to_do
     @to_do.completed!
   end
 
