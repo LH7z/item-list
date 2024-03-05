@@ -25,4 +25,13 @@ class User < ApplicationRecord
     relationship = Follow.find_by(follower_id: id, following_id: user_id)
     return true if relationship
   end
+
+  def friends
+    friend = Follow.where(follower_id: following_ids)
+    return followers
+  end
+
+  def is_friend?(user_id)
+
+  end
 end

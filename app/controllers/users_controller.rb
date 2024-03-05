@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:follow, :unfollow]
+  before_action :set_user, only: [:follow, :unfollow, :friends]
 
   def index
     @users = User.where.not(id: current_user.id)
@@ -21,6 +21,10 @@ class UsersController < ApplicationController
         format.js { render action: :follow }
       end
     end
+  end
+
+  def friends
+    @users = current_user.friends
   end
 
   private
