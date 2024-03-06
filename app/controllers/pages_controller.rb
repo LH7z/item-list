@@ -6,4 +6,8 @@ class PagesController < ApplicationController
 
   def about
   end
+
+  def friends
+    @friends = current_user.friends
+  end
 end

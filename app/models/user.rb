@@ -27,11 +27,11 @@ class User < ApplicationRecord
   end
 
   def friends
-    friend = Follow.where(follower_id: id).or(Follow.where(following_id: id))
-    return friend
+    friend = self.followers == self.following
+    return self.following if friend
   end
 
   def is_friend?(user_id)
-    
+
   end
 end

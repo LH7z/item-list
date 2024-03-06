@@ -1,3 +1,7 @@
-<% @users.each do |friend| %>
-  <h5><%= friend.email %></h5>
+<% if @friends == nil %>
+  <h5>sem amigo paizao</h5>
+<% else %>
+  <% @friends.each do |friend| %>
+    <h5><%= friend.email %></h5>
+  <% end %>
 <% end %>

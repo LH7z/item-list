@@ -4,7 +4,6 @@ Rails.application.routes.draw do
     member do
       get :follow
       get :unfollow
-      get :friends
     end
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -13,6 +12,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   root to: "pages#home"
   get "about", to: "pages#about"
+  get "friends", to: "users#friends"
   resources :lists do
   end
   resources :to_do_lists do
