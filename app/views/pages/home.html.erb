@@ -12,7 +12,7 @@
       <div class="card-buttons">
         <a href="<%=lists_path%>" class="button-start text-center">Get started</a>
         <a href="<%=to_do_lists_path%>" class="button-start text-center">To-do List</a>
-        <a href="<%=friends_path%>" class="button-start text-center">Friends</a>
+        <a href="<%=friends_user_path(current_user)%>" class="button-start text-center">Friends</a>
         <div class="log-about">
           <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: 'button-logout mt-16'%>
           <a href="/about" id="about-button">About us</a>

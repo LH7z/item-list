@@ -27,8 +27,8 @@ class User < ApplicationRecord
   end
 
   def friends
-    friend = self.followers == self.following
-    return self.following if friend
+    friend = self.followers & self.following
+    return friend if friend
   end
 
   def is_friend?(user_id)

@@ -1,7 +1,30 @@
-<% if @friends == nil %>
-  <h5>sem amigo paizao</h5>
-<% else %>
-  <% @friends.each do |friend| %>
-    <h5><%= friend.email %></h5>
-  <% end %>
-<% end %>
+<section>
+  <div class="card-to-do list fade-in">
+    <% if current_user.image.attached? %>
+      <%= cl_image_tag (current_user.image.key), crop: :thumb , id: "avatar-lists"%>
+    <% else %>
+      <%= image_tag "avatar.png", id: "avatar-lists" %>
+    <% end %>
+    <% if @friends == [] %>
+      <%= image_tag "out-of-content.png", alt: "Out of content"%>
+      <a href="/" class="back"><i id="arrow-left" class="fa-solid fa-arrow-left-long"></i></a>
+      <%# <div class="controls mt-3">
+        <%= link_to "Add your list" , new_list_path, class: "add" %>
+      <%# </div> %>
+    <% else %>
+      <div class="list-index">
+        <h3 class="text-3xl font-bold"><%= current_user.nickname %>'s friends!</h3>
+        <% @friends.each do |friend| %>
+        <div class="lists flex-col border-2 rounded-2xl p-4">
+          <h3 class="text-2xl font-bold"><%= friend.nickname %></h3>
+          <p><%= friend.email %></p>
+          <%= link_to  unfollow_user_path(friend.id),class: "trash-friends", method: :post, remote: true do%>
+            <i class="fa-solid fa-user-minus"></i>
+          <% end %>
+        </div>
+        <% end %>
+      </div>
+    <% end %>
+    <a href="/" class="back"><i id="arrow-left" class="fa-solid fa-arrow-left-long"></i></a>
+  </div>
+</section>

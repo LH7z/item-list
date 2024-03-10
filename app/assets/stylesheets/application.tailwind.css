@@ -34,11 +34,11 @@ body {
 }
 
 .avatar {
-  width: 190px;
-  height: 190px;
+  width: 175px;
+  height: 175px;
   border-radius: 100%;
   position: absolute;
-  top: -95px;
+  top: -65px;
   border: 2px solid white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   object-position: center;
@@ -399,6 +399,30 @@ form {
   justify-content: center;
   border-radius: 100%;
   animation: bounceY 1.5s infinite;
+}
+
+.trash-friends{
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  color: #f009;
+  background-color: white;
+  width: 35px;
+  height: 35px;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+}
+
+.add-friend {
+  background: white;
+  color: #2cff25cc;
+  text-align: center;
+  padding: 5px;
+  border-radius: 1rem;
+  margin-top: 10px;
 }
 
 .complete-index {
