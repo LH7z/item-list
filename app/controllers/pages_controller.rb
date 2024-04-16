@@ -3,4 +3,11 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def about
+  end
+
+  def friends
+    @friends = current_user.friends
+  end
 end

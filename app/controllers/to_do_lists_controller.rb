@@ -1,5 +1,5 @@
 class ToDoListsController < ApplicationController
-  before_action :set_to_do, only: %i[edit destroy]
+  before_action :set_to_do, only: %i[edit destroy complete]
   def index
     @to_do = ToDoList.where(user_id: current_user)
   end
@@ -20,13 +20,27 @@ class ToDoListsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    @to_do = ToDoList.find(params[:id])
+    @to_do.user = current_user
+
+    if @to_do.update(to_do_params)
+      @to_do.open!
+      redirect_to to_do_lists_path
+    else
+      render 'lists/edit'
+    end
+  end
+
   def destroy
     @to_do.destroy
     redirect_to to_do_lists_path, notice: "task was sucessfully destroyed."
   end
 
   def complete
-    set_to_do
     @to_do.completed!
   end
 

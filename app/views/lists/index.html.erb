@@ -7,6 +7,13 @@
       <% else %>
         <%= image_tag "avatar.png", id: "avatar-lists" %>
       <% end %>
+      <div class="dropdown-avatar" data-controller="hello">
+          <button data-action="click->hello#showButton click@window->hello#hideButton" class="dropbtn"><i class="fa-solid fa-caret-down"></i></button>
+            <div id="myDropdown" class="dropdown-content-avatar">
+              <%= button_to 'friends', friends_user_path(current_user), class: ''%>
+              <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: ''%>
+            </div>
+      </div>
       <%= image_tag "out-of-content.png", alt: "Out of content"%>
       <div class="controls mt-3">
         <%= link_to "Add your list" , new_list_path, class: "add" %>
@@ -17,10 +24,17 @@
   <div class="card list fade-in">
       <div class="list-index">
         <%= cl_image_tag (current_user.image.key), crop: :thumb , id: "avatar-lists"%>
+        <div class="dropdown-avatar" data-controller="hello">
+          <button data-action="click->hello#showButton click@window->hello#hideButton" class="dropbtn"><i class="fa-solid fa-caret-down"></i></button>
+            <div id="myDropdown" class="dropdown-content-avatar">
+              <%= button_to 'friends', friends_user_path(current_user), class: ''%>
+              <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: ''%>
+            </div>
+        </div>
         <h2 class="text-4xl font-bold"><%= current_user.nickname %>'s lists!</h2>
           <% @lists.each do |list| %>
             <div class="lists">
-              <%= link_to list.title, list_path(list), class: "text-2xl w-full border-2 rounded-2xl py-1" %>
+              <%= link_to list.title, list_path(list), class: "text-2xl w-full border-2 rounded-2xl py-1 m-2" %>
               <%= link_to list, class: "trash-index", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do%>
                 <i class="fa-solid fa-trash-can"></i>
               <% end %>
