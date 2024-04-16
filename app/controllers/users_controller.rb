@@ -28,7 +28,7 @@ class UsersController < ApplicationController
   end
 
   def friends_request
-    @followers = @user.followers
+    @followers = @user.followers - (@user.friends)
   end
 
   private

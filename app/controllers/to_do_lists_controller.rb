@@ -20,6 +20,21 @@ class ToDoListsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    @to_do = ToDoList.find(params[:id])
+    @to_do.user = current_user
+
+    if @to_do.update(to_do_params)
+      @to_do.open!
+      redirect_to to_do_lists_path
+    else
+      render 'lists/edit'
+    end
+  end
+
   def destroy
     @to_do.destroy
     redirect_to to_do_lists_path, notice: "task was sucessfully destroyed."

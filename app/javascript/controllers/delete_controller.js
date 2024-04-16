@@ -8,7 +8,6 @@ export default class extends Controller {
   }
 
   delete(event){
-    console.log("click aqui do delete");
     const button = this.itemTarget
     const trash = this.trashTarget
     button.setAttribute("class", "hidden")

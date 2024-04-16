@@ -4,7 +4,7 @@
     <div class="list-show-actions">
       <h2 class="text-3xl font-bold"><%= @list.title %></h2>
       <% @list.items.each do |item| %>
-        <div class="w-full relative" data-controller="completed" data-controller="delete">
+        <div class="p-1 item relative" data-controller="completed" data-controller="delete">
           <%# <button class="trash-index" data-action="click->delete#delete" data-delete-target="trash"><i class="fa-solid fa-trash-can"></i></button> %>
           <button class="border-2 rounded-2xl w-full py-2" data-delete-target="item" data-completed-target="button" data-action="click->completed#handle"><%= item %></button>
         </div>

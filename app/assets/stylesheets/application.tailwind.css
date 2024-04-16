@@ -181,7 +181,7 @@ section {
 
 .list {
   color: white;
-  padding: 25px 40px;
+  padding: 25px 25px;
 }
 
 .list-show {
@@ -193,9 +193,10 @@ section {
 .list-index {
   display: flex;
   flex-direction: column;
-  gap: 15px;
   align-items: center;
   margin-bottom: 15px;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .login {
@@ -300,9 +301,18 @@ input::placeholder {
   animation-fill-mode: forwards;
 }
 
+.item {
+  background: linear-gradient(to right, 2bff2499 50%, transparent 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+}
 
 .completed {
-  background-color: #2bff2499;
+  animation: completed 2s forwards ease-in-out;
+}
+
+.remove {
+  animation: remove 2s forwards ease-in-out;
 }
 
 /* input fyle css */
@@ -341,8 +351,10 @@ input::placeholder {
 .list-show-actions {
   display: flex;
   flex-direction: column;
-  gap: 15px;
   width: 100%;
+  gap: 5px;
+  overflow-x: hidden;
+  overflow-y: clip;
 }
 
 .trash {
@@ -375,6 +387,13 @@ input::placeholder {
   align-items: center;
 }
 
+.todo{
+  top: -14px;
+  left: -13px;
+  width: 35px;
+  height: 35px;
+}
+
 form {
   max-width: 280px;
 }
@@ -387,8 +406,7 @@ form {
 
 .trash-index {
   position: absolute;
-  top: -8px;
-  right: -10px;
+  right: 2px;
   color: #f009;
   background-color: white;
   width: 25px;
@@ -448,6 +466,84 @@ form {
   background-color: white;
 }
 
+/* dropdown menu */
+
+
+.dropbtn {
+  background-color: #fff;
+  color: #2cff2599;
+  border: none;
+  cursor: pointer;
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: absolute;
+  /* display: inline-block; */
+  right: 75px;
+  top: 75px;
+}
+
+.dropdown-avatar{
+  position: absolute;
+  right: -47px;
+  top: 23px;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 15px
+
+}
+
+.dropdown-content-avatar {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  right: 0;
+  border-radius: 15px
+}
+
+/* Links inside the dropdown */
+.dropdown-content button {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  width: -webkit-fill-available;
+}
+
+.dropdown-content-avatar button {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  width: -webkit-fill-available;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+/*  */
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -456,6 +552,41 @@ form {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes completed {
+  0% {
+    transform: rotate(-2deg);
+  }
+  45% {
+    transform:translateX(-300px);
+    background-color: transparent;
+  }
+  95% {
+    transform: rotate(2deg);
+  }
+  100% {
+    background-color: #2bff2499;
+  }
+}
+
+@keyframes remove {
+  0% {
+    transform: rotate(-2deg);
+    background-color: #2bff2499;
+  }
+  40%{
+    background-color: transparent;
+  }
+  45% {
+    transform:translateX(-300px);
+  }
+  95% {
+    transform: rotate(2deg);
+  }
+  100% {
+    transform: translateX(0px);
   }
 }
 
