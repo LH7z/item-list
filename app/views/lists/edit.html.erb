@@ -1,4 +1,4 @@
-<section>
+<%# <section> %>
   <div class="card list fade-in">
     <a href="/lists" class="back"><i id="arrow-left" class="fa-solid fa-arrow-left-long"></i></a>
     <h2 class="text-5xl font-bold">create  your list!</h2>
@@ -12,16 +12,18 @@
         <div class="controls mt-2">
           <%= f.label "please add your itens here:" , class: "text-md" %><br />
           <button type="button" class="add mt-2" data-action="click->hello#add">Add</button>
-          <button type="button" class="remove mt-2" data-action="click->hello#remove">Remove</button>
+          <%# <button type="button" class="remove mt-2" data-action="click->hello#remove">Remove</button> %>
         </div>
         <% @list.items.each do |item| %>
-          <%= f.text_field :items, autocomplete: "off", name: "items[]" , class: "bg-transparent border-b-2 outline-0 text text-center", :required => true, value: item %>
+          <div class="input-button">
+            <%= f.text_field :items, autocomplete: "off", name: "items[]" , class: "bg-transparent border-b-2 outline-0 text text-center", :required => true, value: item %>
+            <button type="button" class="trash-index" id="trash-item" data-action="click->hello#remove"><i class="fa-solid fa-trash-can"></i></button>
+          </div>
         <% end %>
       </div>
-
       <div class="actions">
         <%= f.submit "Edit your list", class: "mt-5" %>
       </div>
     <% end %>
   </div>
-</section>
+<%# </section> %>

@@ -24,6 +24,36 @@ body {
   letter-spacing: 1px;
 }
 
+
+.back-span {
+  position: fixed;
+  color: white;
+  font-size: 300px;
+}
+
+#back-span-1,#back-span-2 {
+  bottom: -120px;
+  left: -25px;
+}
+
+#back-span-2 {
+  top: -120px;
+}
+
+#back-span-3, #back-span-4{
+  right: -25px;
+}
+
+#back-span-3 {
+  top: -120px;
+  transform: rotate(-25deg);
+}
+
+#back-span-4 {
+  bottom: -120px;
+  transform: rotate(25deg);
+}
+
 .background{
   position: fixed;
   right: 0;
@@ -31,6 +61,22 @@ body {
   min-width: 100%;
   min-height: 100%;
   object-fit: cover;
+}
+
+#error_explanation, #flash_alert, #flash_notice, #flash_error {
+  position: absolute;
+  width: 100%;
+  background-color: white;
+  border-bottom: 4px solid;
+  padding: 15px;
+  text-align: center;
+  color: #ff000099;
+  animation: fadeout 2s ease-in-out forwards 5s;
+}
+
+#flash_notice {
+  color: #2cff2599;
+  animation: fadeout 2s ease-in-out forwards 5s;
 }
 
 .avatar {
@@ -70,8 +116,8 @@ body {
 
 section {
   min-height: 100vh;
-  padding: 50px 0;
   display: flex;
+  justify-content: center;
 }
 
 .card {
@@ -90,7 +136,7 @@ section {
   border: 4px solid white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 15px;
-  padding:110px 25px 15px;
+  padding:40px 25px 10px;
   overflow-wrap: anywhere;
 }
 
@@ -142,12 +188,11 @@ section {
 
 .card-to-do{
   position: relative;
-  margin: auto;
+  margin: 110px auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  min-height: 430px;
   max-width: 320px;
   justify-content: space-between;
   backdrop-filter: blur(10px);
@@ -181,7 +226,7 @@ section {
 
 .list {
   color: white;
-  padding: 25px 25px;
+  padding: 35px 15px;
 }
 
 .list-show {
@@ -194,7 +239,6 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 15px;
   width: 100%;
   overflow-x: hidden;
 }
@@ -245,6 +289,10 @@ section {
   padding: 10px 10px 5px;
 }
 
+#label-list {
+  left: 15px;
+}
+
 .label {
   position: absolute;
   left: 0;
@@ -252,10 +300,10 @@ section {
   transition: .5s;
 }
 
-input:focus + label,
-input:valid + label{
+input:focus + label, input:valid + label  {
   top: -10px;
-}
+};
+
 
 .actions {
   display: flex;
@@ -271,6 +319,7 @@ input:valid + label{
   font-weight: 600;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   cursor: pointer;
+  width: 100%;
 }
 
 .controls .add {
@@ -280,6 +329,7 @@ input:valid + label{
   font-size: 15px;
   font-weight: 600;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 80%;
 }
 
 .controls .remove {
@@ -311,7 +361,7 @@ input::placeholder {
   animation: completed 2s forwards ease-in-out;
 }
 
-.remove {
+.remover {
   animation: remove 2s forwards ease-in-out;
 }
 
@@ -321,7 +371,7 @@ input::placeholder {
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border: 2px solid white;
   border-radius: 10px;
-  padding: 5px 10px;
+  padding: 10px 10px;
   text-align: center;
   width: 100%;
   cursor: pointer;
@@ -370,6 +420,18 @@ input::placeholder {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#trash-item{
+  position: relative;
+  animation: none;
+}
+
+
+.input-button{
+  display: flex;
+  align-items: baseline;
+  justify-content: end;
 }
 
 .edit {
@@ -552,6 +614,16 @@ form {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-60px);
   }
 }
 

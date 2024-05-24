@@ -1,5 +1,5 @@
 
-<section>
+<%# <section> %>
   <% if @lists == [] %>
     <div class="card-out card list fade-in">
       <% if current_user.image.attached? %>
@@ -31,10 +31,10 @@
               <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: ''%>
             </div>
         </div>
-        <h2 class="text-4xl font-bold"><%= current_user.nickname %>'s lists!</h2>
+        <h2 class="text-3xl font-bold"><%= current_user.nickname %>'s lists!</h2>
           <% @lists.each do |list| %>
             <div class="lists">
-              <%= link_to list.title, list_path(list), class: "text-2xl w-full border-2 rounded-2xl py-1 m-2" %>
+              <%= link_to list.title, list_path(list), class: "text-xl w-full border-2 rounded-2xl py-3 px-2 m-2" %>
               <%= link_to list, class: "trash-index", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do%>
                 <i class="fa-solid fa-trash-can"></i>
               <% end %>
@@ -47,4 +47,4 @@
       <a href="/" class="back"><i id="arrow-left" class="fa-solid fa-arrow-left-long"></i></a>
     <% end %>
   </div>
-</section>
+<%# </section> %>

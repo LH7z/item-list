@@ -1,12 +1,12 @@
-<section>
+<%# <section> %>
   <div class="card list fade-in">
     <a href="/lists" class="back"><i id="arrow-left" class="fa-solid fa-arrow-left-long"></i></a>
     <div class="list-show-actions">
-      <h2 class="text-3xl font-bold"><%= @list.title %></h2>
+      <h2 class="text-2xl font-bold"><%= @list.title %></h2>
       <% @list.items.each do |item| %>
         <div class="p-1 item relative" data-controller="completed" data-controller="delete">
           <%# <button class="trash-index" data-action="click->delete#delete" data-delete-target="trash"><i class="fa-solid fa-trash-can"></i></button> %>
-          <button class="border-2 rounded-2xl w-full py-2" data-delete-target="item" data-completed-target="button" data-action="click->completed#handle"><%= item %></button>
+          <button class="border-2 rounded-2xl w-full py-3" data-delete-target="item" data-completed-target="button" data-action="click->completed#handle"><%= item %></button>
         </div>
       <% end %>
     </div>
@@ -19,4 +19,4 @@
       <% end %>
     </div>
   </div>
-</section>
+<%# </section> %>

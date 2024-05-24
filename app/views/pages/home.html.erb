@@ -1,12 +1,12 @@
-<section>
+<%# <section> %>
   <div class="card fade-in">
     <% if current_user %>
       <% if current_user.image.attached? %>
-        <%= cl_image_tag (current_user.image.key), crop: :thumb, class: "avatar"%>
+        <%= cl_image_tag (current_user.image.key), crop: :thumb, id: "avatar-lists"%>
       <% else %>
-        <%= image_tag "avatar.png" , class: "avatar" %>
+        <%= image_tag "avatar.png" , id: "avatar-lists" %>
       <% end %>
-        <div class="dropdown" data-controller="hello">
+        <div class="dropdown-avatar" data-controller="hello">
           <button data-action="click->hello#showButton click@window->hello#hideButton" class="dropbtn"><i class="fa-solid fa-caret-down"></i></button>
             <div id="myDropdown" class="dropdown-content">
               <%= button_to 'friends requests', friends_request_user_path(current_user),method: :get, class: ''%>
@@ -34,4 +34,4 @@
       </div>
     <% end %>
   </div>
-</section>
+<%# </section> %>
