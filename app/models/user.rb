@@ -6,6 +6,8 @@ class User < ApplicationRecord
   has_many :lists, dependent: :destroy
   has_many :to_do_lists, dependent: :destroy
   has_one_attached :image
+  validates :email , presence: true
+  validates :nickname , presence: true
 
   has_many :follower_relationships, foreign_key: :following_id, class_name: 'Follow'
   has_many :followers, through: :follower_relationships, source: :follower

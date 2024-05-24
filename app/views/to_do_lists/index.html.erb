@@ -1,4 +1,4 @@
-<section>
+<%# <section> %>
   <% if @to_do == [] %>
     <div class="card-out card list fade-in">
       <% if current_user.image.attached? %>
@@ -26,23 +26,23 @@
         <div class="dropdown-avatar" data-controller="hello">
           <button data-action="click->hello#showButton click@window->hello#hideButton" class="dropbtn"><i class="fa-solid fa-caret-down"></i></button>
             <div id="myDropdown" class="dropdown-content-avatar">
-              <%= button_to 'friends', friends_user_path(current_user), class: ''%>
+              <%= button_to 'friends', friends_user_path(current_user), method: :get, class: ''%>
               <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: ''%>
             </div>
         </div>
-        <h2 class="text-3xl font-bold"><%= current_user.nickname %>'s <br> To-do list!</h2>
+        <h2 class="text-4xl font-bold"><%= current_user.nickname %>'s <br> To-do list!</h2>
           <% @to_do.each do |to_do| %>
             <% if to_do.date.before?(Date.today)%>
               <% to_do.closed! %>
             <% end %>
             <% if to_do.completed? %>
-              <div data-completed-target="todo" class="m-4 border-2 rounded-2xl p-4" style="position: relative; background: #2bff2499; width:-webkit-fill-available">
+              <div data-completed-target="todo" class="border-2 rounded-2xl p-4" style="position: relative; background: #2bff2499; width:-webkit-fill-available; margin: 0.7rem;">
             <% elsif to_do.closed? %>
-              <div data-completed-target="todo" class="m-4 border-2 rounded-2xl p-4" style="position: relative; background: #ff000099; width:-webkit-fill-available">
+              <div data-completed-target="todo" class="border-2 rounded-2xl p-4" style="position: relative; background: #ff000099; width:-webkit-fill-available; margin: 0.7rem;">
             <% else %>
-              <div data-completed-target="todo" data-controller="completed"  style="position: relative ; width:-webkit-fill-available; padding: 1rem; margin:1rem; border:2px solid; border-radius: 1rem">
+              <div data-controller="todo-completed" data-todo-completed-target="todo" data-todo="<%= to_do.status %>" style="position: relative ; width:-webkit-fill-available; padding: 1rem; margin:.7rem; border:2px solid; border-radius: 1rem">
             <% end %>
-                    <h1 class="text-3xl" data-completed-target="todoDate"><%= to_do.date.strftime("%b, %d")%></h1>
+                    <h1 class="text-3xl" data-todo-completed-target="todoDate"><%= to_do.date.strftime("%b, %d")%></h1>
                     <%# <h1 class="text-3xl"><%= to_do.date.strftime("%H : %M")%>
                     <h2 class="text-xl"><%= to_do.date.strftime("%A") %></h2>
                     <p class="text-xl"><%= to_do.name %></p>
@@ -54,13 +54,13 @@
                   <i class="fa-solid fa-gear"></i>
                 <% end %>
                 <%# <%= link_to complete_path(to_do), data: { turbo_method: :get } do%>
-                <button class="w-full" data-completed-target="button" data-action="click->completed#to_do_completed">
+                <button class="w-full" data-todo-completed-target="button" data-action="click->todo-completed#to_do_completed">
                   <% if to_do.completed? || to_do.closed? %>
                     <div style="display:none">
                   <% else %>
-                    <div data-completed-target= "buttonText" class="complete-index">
+                    <div data-todo-completed-target= "buttonText" class="complete-index">
                   <% end %>
-                      <h2 data-completed-target= "text">complete!</h2>
+                      <h2 data-todo-completed-target="text">complete!</h2>
                       <i class="fa-regular fa-circle-check text-2xl"></i>
                     </div>
                 </button>
@@ -74,4 +74,4 @@
       <a href="/" class="back"><i id="arrow-left" class="fa-solid fa-arrow-left-long"></i></a>
     </div>
   <% end %>
-</section>
+<%# </section> %>
