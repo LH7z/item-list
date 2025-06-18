@@ -22,7 +22,7 @@ Easy way to do your list at the market, list your goals of the day and other thi
 git clone https://github.com/seuusuario/item-list.git
 2. cd item-list
 
-###Install dependencies
+### Install dependencies
 
 -bundle install
 -Setup the database
