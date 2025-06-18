@@ -16,21 +16,21 @@ Easy way to do your list at the market, list your goals of the day and other thi
 - Rails (version 7.x or compatible)  
 - PostgreSQL (or your preferred database)  
 
-### Installation
+## Installation
 
-1. Clone the repository bash
+1. Clone the repository
 git clone https://github.com/seuusuario/item-list.git
-cd item-list
+2. cd item-list
 
 ###Install dependencies
 
-bundle install
-Setup the database
+-bundle install
+-Setup the database
 
-rails db:create
-rails db:migrate
-Start the server
+-rails db:create
+-rails db:migrate
+-Start the server
 
-rails server
+-rails server
 
-Open your browser at http://localhost:3000
+-Open your browser at http://localhost:3000
