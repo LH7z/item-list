@@ -1,24 +1,36 @@
-# README
+# Item List
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Easy way to do your list at the market, list your goals of the day and other things, with an easy and simple design. Perfect for anyone!
 
-Things you may want to cover:
+## Features
 
-* Ruby version
+- Create and manage your daily to-do lists and shopping lists  
+- User-friendly and clean interface  
+- Simple and fast list organization  
 
-* System dependencies
+## Getting Started
 
-* Configuration
+### Prerequisites
 
-* Database creation
+- Ruby (version 3.0.0 or compatible)  
+- Rails (version 7.x or compatible)  
+- PostgreSQL (or your preferred database)  
 
-* Database initialization
+### Installation
 
-* How to run the test suite
+1. Clone the repository bash
+git clone https://github.com/seuusuario/item-list.git
+cd item-list
 
-* Services (job queues, cache servers, search engines, etc.)
+###Install dependencies
 
-* Deployment instructions
+bundle install
+Setup the database
 
-* ...
+rails db:create
+rails db:migrate
+Start the server
+
+rails server
+
+Open your browser at http://localhost:3000
